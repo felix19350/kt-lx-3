@@ -4,6 +4,9 @@
 # Ignore Gradle build output directory
 build
 
+# Ignore intellij stuff
+.idea
+
 # Shamelessly copied from: https://github.com/JetBrains/kotlin/blob/master/.gitignore
 .DS_Store
 .idea/shelf

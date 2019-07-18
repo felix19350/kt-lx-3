@@ -9,7 +9,6 @@ import io.mockk.slot
 import lx.kotlin.model.InstallationLocation
 import lx.kotlin.model.LocationId
 import lx.kotlin.model.PhysicalLocation
-import org.mockito.ArgumentMatchers.any
 
 fun locationRepo(): InstallationLocationRepository {
     val repo = mockk<InstallationLocationRepository>()
