@@ -1,0 +1,104 @@
+openapi: '3.0.0'
+info:
+  description: ""
+  version: ""
+  title: ""
+  contact: {}
+servers:
+  - url: ""
+paths:
+  /device:
+    post:
+      operationId: createDevice
+      summary: "Creates a new device"
+      tags: [ "DeviceManagement" ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeviceCommand'
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+
+components:
+    securitySchemes:
+        # TODO: Add security schemes
+    schemas:
+      DeviceId:
+        type: string
+        format: uuid
+      LocationId:
+        type: string
+        format: uuid
+      SensorId:
+        type: string
+        format: uuid
+      ClientId:
+        type: string
+        format: uuid
+      Sensor:
+        type: object
+        properties:
+          id:
+            $ref: '#/components/schemas/SensorId'
+      CreateDeviceCommand:
+        type: object
+        properties:
+          label:
+            type: string
+          locationId:
+            $ref: '#/components/schemas/LocationId'
+          sensors:
+            type: array
+            items:
+              $ref: '#/components/schemas/Sensor'
+      PhysicalLocation:
+        type: object
+        properties:
+          lat:
+            type: number
+            minimum: -90.0
+            maximum: 90.0
+          lon:
+            type: number
+            minimum: -180
+            maximum: 180
+          altitudeMeters:
+            type: number
+          floor:
+            type: string
+            nullable: true
+            required: false
+          room:
+            type: string
+            nullable: true
+            required: false
+          notes:
+            type: string
+            nullable: true
+            required: false
+      Location:
+        type: object
+        properties:
+          id:
+            $ref: '#/components/schemas/LocationId'
+          clientId:
+            $ref: '#/components/schemas/ClientId'
+          physicalLocation:
+            $ref: '#/components/schemas/PhysicalLocation'
+      IoTDevice:
+        type: object
+        properties:
+           id:
+             $ref: '#/components/schemas/DeviceId'
+          location:
+            $ref: '#/components/schemas/Location'
+          sensors:
+            type: array
+            items:
+              $ref: '#/components/schemas/Sensor'
