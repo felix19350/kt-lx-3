@@ -76,7 +76,7 @@ class IoTDeviceApiHandlerTests {
                     ContentType.Application.Json.toString()
                 )
             }) {
-                //Then we get a 201 as well as a new IoTDevice as JSON
+                // Then we get a 201 as well as a new IoTDevice as JSON
                 response.status() `should equal` HttpStatusCode.Created
                 val receivedDevice: IoTDevice = mapper.readValue(response.content!!)
                 with(receivedDevice) {

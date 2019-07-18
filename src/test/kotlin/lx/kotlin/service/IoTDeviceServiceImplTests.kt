@@ -76,7 +76,7 @@ class IoTDeviceServiceImplTests {
 
         every { repo.save(any()) } just Runs
 
-        //every {repo.get(any())} returns IoTDevice(deviceId = "someId", label = "my label", installedAt = location(), status = DeviceStatus.Active, sensors = listOf())
+        // every {repo.get(any())} returns IoTDevice(deviceId = "someId", label = "my label", installedAt = location(), status = DeviceStatus.Active, sensors = listOf())
 
         val id = slot<IoTDeviceId>()
         val device1 = IoTDevice(

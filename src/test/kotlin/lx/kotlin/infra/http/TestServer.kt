@@ -30,7 +30,7 @@ fun Application.testModule(service: IotDeviceService) {
             priority = 1.0
         }
     }
-    install(CallLogging){ level = Level.INFO }
+    install(CallLogging) { level = Level.INFO }
     install(ContentNegotiation) {
         register(ContentType.Application.Json, JacksonConverter(JsonSettings.mapper))
     }

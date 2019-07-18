@@ -24,7 +24,7 @@ fun locationRepo(): InstallationLocationRepository {
     return repo
 }
 
-fun deviceRepo(): IoTDeviceRepository{
+fun deviceRepo(): IoTDeviceRepository {
     val repo = mockk<IoTDeviceRepository>()
     every { repo.save(any()) } just Runs
     return repo

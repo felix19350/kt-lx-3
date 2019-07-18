@@ -20,3 +20,10 @@ The presentation itself is located in the *docs* folder
 
 ### Intellij ###
 * Just import the project :)
+* Run the tests individually or through the gradle task
+
+
+## Playing around with the code ##
+* Do yourself a favour and use Intellij
+* Install ktlint (https://github.com/pinterest/ktlint)
+* Integrate ktlint with intellij, so that the IDE's code formatting is compliant with the linter: *ktlint --apply-to-idea-project*  

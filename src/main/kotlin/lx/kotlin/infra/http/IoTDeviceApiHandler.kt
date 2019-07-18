@@ -11,10 +11,9 @@ import lx.kotlin.service.IotDeviceService
 
 fun Route.iotDeviceApi(service: IotDeviceService) {
 
-    post("/device"){
+    post("/device") {
         val cmd: CreateIoTDeviceCommand = call.receive()
         val result = service.createDevice(cmd)
         call.respond(HttpStatusCode.Created, result)
     }
-
 }

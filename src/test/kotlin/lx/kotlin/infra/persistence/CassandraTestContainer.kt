@@ -1,11 +1,7 @@
 package lx.kotlin.infra.persistence
 
 import org.testcontainers.containers.CassandraContainer
-import org.testcontainers.containers.GenericContainer
 import org.testcontainers.containers.wait.CassandraQueryWaitStrategy
-import org.testcontainers.containers.wait.strategy.HostPortWaitStrategy
-import org.testcontainers.containers.wait.strategy.HttpWaitStrategy
-
 class KCassandraContainer : CassandraContainer<KCassandraContainer>()
 
 object CassandraTestContainer {

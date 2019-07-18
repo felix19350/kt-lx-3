@@ -29,4 +29,3 @@ data class CarbonMonoxideSensor(val id: SensorId) : Sensor() {
         return Reading.empty(id)
     }
 }
-

@@ -47,7 +47,7 @@ class CassandraIoTDeviceRepository(
         val results = session.execute(query)
         val row = results.firstOrNull()
         println(row)
-        return row?.let{ toIoTDevice(it) }
+        return row?.let { toIoTDevice(it) }
     }
 
     private fun toIoTDevice(row: Row): IoTDevice {

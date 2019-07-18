@@ -1,6 +1,7 @@
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
     id("org.jetbrains.kotlin.jvm").version("1.3.31")
+    id("org.jlleitschuh.gradle.ktlint").version("8.2.0")
 
     // Apply the application plugin to add support for building a CLI application.
     application
@@ -15,14 +16,13 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
     withType<Test> {
-        useJUnitPlatform{
-            if(!isCiBuild) {
+        useJUnitPlatform {
+            if (!isCiBuild) {
                 excludeTags("Slow")
             }
         }
     }
 }
-
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -61,7 +61,7 @@ dependencies {
 
     // Test containers +  cassandra
     testImplementation("org.testcontainers:junit-jupiter:1.11.3")
-    testImplementation( "org.testcontainers:cassandra:1.11.3")
+    testImplementation("org.testcontainers:cassandra:1.11.3")
 }
 
 application {
